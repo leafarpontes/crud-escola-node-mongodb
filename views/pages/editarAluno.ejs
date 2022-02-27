@@ -1,0 +1,36 @@
+<%- include('../partials/header'); %>
+
+<!-- Nome, telefone, endereço, nome do responsável, RA -->
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form action="/alunos/editarAluno" method="POST">
+                <div class="form-group">
+                    <label for="nomeAluno">Nome do Aluno</label>
+                    <input type="text" class="form-control" id="nomeAluno" name="nomeAluno" placeholder="Nome do Aluno" value="<%= aln.nomeAluno %>">
+                </div>
+                <div class="form-group">
+                    <label for="nomeResponsavel">Nome do Responsável</label>
+                    <input type="text" class="form-control" id="nomeResponsavel" name="nomeResponsavel"
+                        placeholder="Nome do Responsável" value="<%= aln.nomeResponsavel %>">
+                </div>
+                <div class="form-group">
+                    <label for="contato">Telefone de Contato</label>
+                    <input type="text" class="form-control" id="contato" name="contato"
+                        placeholder="Telefone de Contato" value="<%= aln.contato %>">
+                </div>
+                <div class="form-group">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Endereço" value="<%= aln.endereco %>">
+                </div>
+                <div class="form-group">
+                    <label for="ra">RA</label>
+                    <input type="text" class="form-control" id="ra" name="ra" placeholder="Número de matricula (RA)" value="<%= aln.ra %>">
+                </div>
+                <input type="hidden" name="id" value="<%= aln._id %>">
+                <button type="submit" class="btn btn-success">Atualizar</button>
+            </form>
+        </div>
+    </div>
+</div>

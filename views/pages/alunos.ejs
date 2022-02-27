@@ -1,0 +1,55 @@
+<%- include('../partials/header'); %>
+
+<section class="container">
+    <div class="row">
+        <div class="col">
+            <div class="row mt-5">
+                <div class="col-6">
+                    <h1>Lista de Alunos</h1>
+                </div>
+                <div class="col-6">
+                    <a href="alunos/cadastrarAluno" class="btn btn-primary">Cadastrar Aluno</a>
+                </div>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome do Aluno</th>
+                        <th>Nome do Responsável</th>
+                        <th>Telefone</th>
+                        <th>Endereço</th>
+                        <th>RA</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% listaAlunos.forEach(function(aluno){ %>
+                        <tr>
+                            <td>
+                                <%= aluno.nomeAluno %>
+                            </td>
+                            <td>
+                                <%= aluno.nomeResponsavel %>
+                            </td>
+                            <td>
+                                <%= aluno.contato %>
+                            </td>
+                            <td>
+                                <%= aluno.endereco %>
+                            </td>
+                            <td>
+                                <%= aluno.ra %>
+                            </td>
+                            <td>
+                                <a href="alunos/editarAluno/<%=aluno._id %>" class="btn btn-warning">Editar</a>
+                                <a href="alunos/deletarAluno/<%=aluno._id %>" class="btn btn-danger">Deletar</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<%- include('../partials/footer'); %>
